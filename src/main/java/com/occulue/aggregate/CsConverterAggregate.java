@@ -46,7 +46,14 @@ public class CsConverterAggregate {
     @CommandHandler
     public void handle(UpdateCsConverterCommand command) throws Exception {
     	LOGGER.info( "handling command UpdateCsConverterCommand" );
-    	UpdateCsConverterEvent event = new UpdateCsConverterEvent(command.getCsConverterId(), command.MaxAlpha(), command.MaxGamma(), command.MaxIdc(), command.MinAlpha(), command.MinGamma(), command.MinIdc(), command.RatedIdc());        
+    	UpdateCsConverterEvent event = new UpdateCsConverterEvent(command.getCsConverterId(), 
+								  command.getMaxAlpha(), 
+								  command.getMaxGamma(), 
+								  command.getMaxIdc(), 
+								  command.getMinAlpha(), 
+								  command.getMinGamma(), 
+								  command.getMinIdc(), 
+								  command.getRatedIdc());        
     	
         apply(event);
     }
